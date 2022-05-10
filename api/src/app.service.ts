@@ -1,4 +1,6 @@
 import { HttpService, Injectable } from '@nestjs/common';
+import { response } from 'express';
+import { get } from 'http';
 import { map } from 'rxjs';
 
 @Injectable()
@@ -25,11 +27,36 @@ export class AppService {
   }
 
   getInfo(params) {
-    return this.httpService
-    .get(`https://api.github.com/repos/${params.username}/gitHubApi/commits` , {
+    return  this.httpService
+    .get(`http://api.github.com/repos/${params.username}/gitHubApi/commits` , {
       headers : {
         Accept: "application/vnd.github.v3+json"
       }
     })
+    
+    .pipe(
+      map(response => response.data),
+      map(data=> data)
+      // map ( data , index => (
+      //   {
+      //       [index] : data[index].commit.message
+      //   }
+
+      // )
+        
+
+      
+      // )
+      // map( (data, index) => ({
+      //   [index ]: data.commit.message
+      // })),
+
+
+
+      
+      
+        
+      
+    )
   }
 }
