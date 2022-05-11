@@ -7,7 +7,7 @@ import CommitsList from './components/CommitsList';
 function App() {
 
   return (
-    <div className="h-full  " >
+    <div className="h-screen  " >
       <NavBar></NavBar>
       <CommitsList></CommitsList>
     </div>

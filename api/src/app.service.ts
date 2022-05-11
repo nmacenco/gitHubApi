@@ -26,8 +26,8 @@ export class AppService {
 
   async getInfo(params) {
     return  this.httpService
-    // .get(`http://api.github.com/repos/${params.username}/gitHubApi/commits` , {
-    .get(`http://api.github.com/repos/${params.username}/HENRY-PI-POKEMON/commits` , {
+    .get(`http://api.github.com/repos/${params.username}/gitHubApi/commits` , {
+    // .get(`http://api.github.com/repos/${params.username}/HENRY-PI-POKEMON/commits` , {
       // headers : {
       headers : {
         Accept: "application/vnd.github.v3+json"
